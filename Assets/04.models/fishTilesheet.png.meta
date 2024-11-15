@@ -1703,11 +1703,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fishTilesheet_74
+      name: fishTilesheet__-1
       rect:
         serializedVersion: 2
         x: 128
-        y: 128
+        y: 127
         width: 64
         height: 64
       alignment: 0
@@ -2858,7 +2858,6 @@ TextureImporter:
       fishTilesheet_70: -1427829717
       fishTilesheet_71: 853029630
       fishTilesheet_72: 2041347569
-      fishTilesheet_74: -1746425256
       fishTilesheet_76: -1401036526
       fishTilesheet_78: -469493455
       fishTilesheet_8: -535851405
@@ -2877,6 +2876,7 @@ TextureImporter:
       fishTilesheet_94: -2116780454
       fishTilesheet_96: 491530922
       fishTilesheet_98: -780149111
+      fishTilesheet__-1: -1746425256
       fishTilesheet__0: -18172390
       fishTilesheet__0_1: 950578821
       fishTilesheet__1: 1805293450
