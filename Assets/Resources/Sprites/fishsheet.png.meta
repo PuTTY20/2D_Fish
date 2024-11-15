@@ -1682,7 +1682,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fishTilesheet__3
+      name: 5
       rect:
         serializedVersion: 2
         x: 64
@@ -1703,7 +1703,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fishTilesheet__-1
+      name: 0-1
       rect:
         serializedVersion: 2
         x: 128
@@ -1724,7 +1724,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fishTilesheet__0
+      name: 2
       rect:
         serializedVersion: 2
         x: 192
@@ -1766,7 +1766,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fishTilesheet__2
+      name: 4
       rect:
         serializedVersion: 2
         x: 320
@@ -1808,7 +1808,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fishTilesheet__4
+      name: 6
       rect:
         serializedVersion: 2
         x: 448
@@ -1850,7 +1850,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fishTilesheet__1
+      name: 3
       rect:
         serializedVersion: 2
         x: 576
@@ -2060,7 +2060,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fishTilesheet__3_1
+      name: 5_1
       rect:
         serializedVersion: 2
         x: 64
@@ -2102,7 +2102,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fishTilesheet__0_1
+      name: 2_1
       rect:
         serializedVersion: 2
         x: 192
@@ -2144,7 +2144,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fishTilesheet__2_1
+      name: 4_1
       rect:
         serializedVersion: 2
         x: 320
@@ -2186,7 +2186,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fishTilesheet__4_1
+      name: 6_1
       rect:
         serializedVersion: 2
         x: 448
@@ -2228,7 +2228,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fishTilesheet__1_1
+      name: 3_1
       rect:
         serializedVersion: 2
         x: 576
@@ -2270,7 +2270,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fishTilesheet__5
+      name: 7
       rect:
         serializedVersion: 2
         x: 704
@@ -2312,13 +2312,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fishTilesheet_103
+      name: 8
       rect:
         serializedVersion: 2
-        x: 832
+        x: 831
         y: 64
         width: 64
-        height: 64
+        height: 63
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2354,7 +2354,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fishTilesheet__6
+      name: 9
       rect:
         serializedVersion: 2
         x: 1024
@@ -2763,12 +2763,25 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      0-1: -1746425256
+      2: -18172390
+      2_1: 950578821
+      3: 1805293450
+      3_1: 1709307536
+      4: 1569472753
+      4_1: -1899354195
+      5: -2074730276
+      5_1: -349877637
+      6: -1030405502
+      6_1: -2130819236
+      7: -706092049
+      8: 1035521590
+      9: -793470269
       fishTilesheet_0: -1952076512
       fishTilesheet_1: -507586377
       fishTilesheet_10: -542167886
       fishTilesheet_100: -798824652
       fishTilesheet_102: 257944264
-      fishTilesheet_103: 1035521590
       fishTilesheet_104: 1833308205
       fishTilesheet_105: -1253690669
       fishTilesheet_106: 876499165
@@ -2876,19 +2889,6 @@ TextureImporter:
       fishTilesheet_94: -2116780454
       fishTilesheet_96: 491530922
       fishTilesheet_98: -780149111
-      fishTilesheet__-1: -1746425256
-      fishTilesheet__0: -18172390
-      fishTilesheet__0_1: 950578821
-      fishTilesheet__1: 1805293450
-      fishTilesheet__1_1: 1709307536
-      fishTilesheet__2: 1569472753
-      fishTilesheet__2_1: -1899354195
-      fishTilesheet__3: -2074730276
-      fishTilesheet__3_1: -349877637
-      fishTilesheet__4: -1030405502
-      fishTilesheet__4_1: -2130819236
-      fishTilesheet__5: -706092049
-      fishTilesheet__6: -793470269
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

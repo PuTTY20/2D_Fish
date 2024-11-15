@@ -18,8 +18,7 @@ public class ObjectPooling : MonoBehaviour
         GameObject level3 = Resources.Load<GameObject>("Fish/3");
         GameObject level4 = Resources.Load<GameObject>("Fish/4");
         GameObject level5 = Resources.Load<GameObject>("Fish/5");
-        GameObject level6 = Resources.Load<GameObject>("Fish/6");
-        GameObject level7 = Resources.Load<GameObject>("Fish/7");
+        GameObject level6 = Resources.Load<GameObject>("Fish/6");  //red
 
         fishGroup = new GameObject("Fish Group");
 
@@ -30,7 +29,6 @@ public class ObjectPooling : MonoBehaviour
         StartCoroutine(CreateFishPool(level4));
         StartCoroutine(CreateFishPool(level5));
         StartCoroutine(CreateFishPool(level6));
-        StartCoroutine(CreateFishPool(level7));
     }
 
     IEnumerator CreateFishPool(GameObject fishLevel)
