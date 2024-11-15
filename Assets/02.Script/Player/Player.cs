@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class Fish : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public enum LEVEL
-    { Level1 = 0, Level2, Level3, Level4, Level5, Level6, Level7, level8, level9 }
+    { Level1 = 1, Level2, Level3, Level4, Level5, Level6, Level7, level8, level9 }
     /*
     * 0: 0.7 no line purple fish
-    * 1: no line purple fish.   <- player start point
+    * 1: no line purple fish.       <- player start point
     * 2: purple fish
     * 3: orange fish
     * 4: blue fish
@@ -26,8 +26,11 @@ public class Fish : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
     }
 
-    void Update()
+    public void LevelSprite()
     {
+        if (sprite == null)
+            sprite = GetComponent<SpriteRenderer>();
+
         switch (level)
         {
             case LEVEL.Level1:

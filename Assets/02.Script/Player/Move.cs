@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    Fish _fish;
+    Player _fish;
     
     Rigidbody2D rb;
     Vector2 movement;
@@ -12,7 +12,7 @@ public class Move : MonoBehaviour
 
     void Start()
     {
-        _fish = GetComponent<Fish>();
+        _fish = GetComponent<Player>();
         rb = GetComponent<Rigidbody2D>();
     }
 

@@ -4,9 +4,8 @@
 # 241115
 1. 물고기 크기별로 List 만들고, ObjectPooling
 2. Player 움직임 구현
-3. 
-
-
+3. 물고기 sprite를 Resources에 미리 불러옴
+4. Editor를 사용해 실행중이 아닐때에도 Player의 스프라이트를 레벨에 따라 자동으로 업데이트
 
 
 
