@@ -5,11 +5,13 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static UIManager UI;
-    public static PoolingManager Pool;
+    public static PoolingManager PoolManager;
+    public static ObjectPooling ObjectPooling;
 
     void Awake()
     {
         TryGetComponent(out UI);
-        TryGetComponent(out Pool);
+        TryGetComponent(out PoolManager);
+        TryGetComponent(out ObjectPooling);
     }
 }

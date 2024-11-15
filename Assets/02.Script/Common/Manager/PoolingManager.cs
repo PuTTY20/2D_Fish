@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class PoolingManager : MonoBehaviour
 {
-    
-    void Start()
-    {
-        
-    }
+    GameObject selectedFish = null;
 
-    void Update()
+    void Start()
+        => StartCoroutine(ActivatePlatforms());    
+
+    public IEnumerator ActivatePlatforms()
     {
-        
+        while (true)
+        {
+            selectedFish = GameManager.ObjectPooling.GetFish();
+
+            if (selectedFish != null)
+                selectedFish.SetActive(true);
+
+            yield return new WaitForSeconds(4.0f);
+        }
     }
 }
