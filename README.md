@@ -3,7 +3,8 @@
 
 # 241115
 1. 물고기 크기별로 List 만들고, ObjectPooling
-2. 
+2. Player 움직임 구현
+3. 
 
 
 

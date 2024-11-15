@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Fish : MonoBehaviour
 {
-    SpriteRenderer sprite;
+    internal SpriteRenderer sprite;
 
-    bool isGameOver = false;
+    // bool isGameOver = false;
     
     void Start()
     {
