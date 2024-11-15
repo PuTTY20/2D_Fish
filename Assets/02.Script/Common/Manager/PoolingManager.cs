@@ -11,7 +11,7 @@ public class PoolingManager : MonoBehaviour
 
     public IEnumerator ActivatePlatforms()
     {
-        while (true)
+        while (!GameManager.instance.isGameOver)
         {
             selectedFish = GameManager.ObjectPooling.GetFish();
 

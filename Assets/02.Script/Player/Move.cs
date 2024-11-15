@@ -7,8 +7,8 @@ public class Move : MonoBehaviour
     Rigidbody2D rb;
     Vector2 movement;
 
-    [SerializeField] float moveSpeed = 5f;
-    [SerializeField] float damping = 3f; // 서서히 멈추게 할 감속 비율, 숫자 커질수록 빨리 멈춰버림
+    float moveSpeed = 5f;
+    float damping = 3f; // 서서히 멈추게 할 감속 비율, 숫자 커질수록 빨리 멈춰버림
 
     void Start()
     {
@@ -30,6 +30,6 @@ public class Move : MonoBehaviour
     {
         Vector2 moveVel = movement.normalized * moveSpeed;
         rb.velocity = Vector2.Lerp(rb.velocity, moveVel, damping * Time.fixedDeltaTime);
-        Debug.Log(rb.velocity); // Lerp로 인해 moveVel값으로 서서히 올라감
+        // Debug.Log(rb.velocity); // Lerp로 인해 moveVel값으로 서서히 올라감
     }
 }
