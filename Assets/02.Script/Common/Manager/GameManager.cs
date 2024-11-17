@@ -13,11 +13,18 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        if (instance == null)
-            instance = this;
-        else if (instance != this)
+        if (instance != null && instance != this)   // 이미 인스턴스가 존재하고 현재 인스턴스가 아니면
+        {
             Destroy(gameObject);
-
+            return;
+        }
+        instance = this;
+        
+        GetComponents();
+    }
+    
+    void GetComponents()
+    {
         TryGetComponent(out UI);
         TryGetComponent(out PoolManager);
         TryGetComponent(out ObjectPooling);

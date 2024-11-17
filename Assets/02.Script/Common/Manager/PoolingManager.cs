@@ -4,28 +4,41 @@ using UnityEngine;
 
 public class PoolingManager : MonoBehaviour
 {
-    GameObject selectedFish = null;
+    Vector2 yPos = new Vector2(-4.7f, 4.7f);
 
-    void Start()
-        => StartCoroutine(ActivatePlatforms());
-
-    public IEnumerator ActivatePlatforms()
+    float spawnInterval = 2.0f;
+    float xPos = 10f;
+    
+    GameObject selectedFish;
+    
+    void Start() => StartCoroutine(SpawnFishRoutine());
+    
+    IEnumerator SpawnFishRoutine()
     {
+        WaitForSeconds wait = new WaitForSeconds(spawnInterval); // 캐싱하여 가비지 생성 방지
+        
         while (!GameManager.instance.isGameOver)
         {
-            selectedFish = GameManager.ObjectPooling.GetFish();
-
-            if (selectedFish != null)
-            {
-                selectedFish.SetActive(true);
-
-                float x = Random.Range(0, 2) == 0 ? -10f : 10f;
-                float y = Random.Range(-4.7f, 4.7f);
-
-                selectedFish.transform.position = new Vector2(x, y);
-
-                yield return new WaitForSeconds(2.0f);
-            }
+            if (TrySpawnFish())
+                yield return wait;
         }
+    }
+    
+    private bool TrySpawnFish()
+    {
+        selectedFish = GameManager.ObjectPooling.GetFish();
+
+        if (selectedFish == null) return false;
+        
+        SetFishPosition();
+        selectedFish.SetActive(true);
+        return true;
+    }
+    
+    private void SetFishPosition()
+    {
+        float x = Random.Range(0, 2) == 0 ? -xPos : xPos;
+        float y = Random.Range(yPos.x, yPos.y);
+        selectedFish.transform.position = new Vector2(x, y);
     }
 }

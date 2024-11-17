@@ -5,22 +5,25 @@ using UnityEngine;
 public class PlayerEditor : Editor
 {
     private SerializedProperty levelProperty;
+    private Player targetPlayer;
 
-    void OnEnable()
+    private void OnEnable()
     {
         levelProperty = serializedObject.FindProperty("level");
+        targetPlayer = (Player)target;
     }
 
     public override void OnInspectorGUI()
     {
+        using var check = new EditorGUI.ChangeCheckScope();
+        
         serializedObject.Update();
-
         EditorGUILayout.PropertyField(levelProperty);
-
-        if (serializedObject.ApplyModifiedProperties())
+        
+        if (check.changed)
         {
-            // 레벨이 변경되었을 때 자동으로 스프라이트 업데이트
-            ((Player)target).LevelSprite();
+            serializedObject.ApplyModifiedProperties();
+            targetPlayer.LevelSprite();
         }
     }
 }
