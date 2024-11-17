@@ -17,49 +17,18 @@ public class Player : MonoBehaviour
     * 9: eel
     */
 
-    public LEVEL level = LEVEL.Level1;
+    [SerializeField] LEVEL level = LEVEL.Level1;
 
     internal SpriteRenderer sprite;
 
+    readonly int[] spriteIdx = { 0, 1, 3, 5, 7, 9, 11, 12, 13 };
+
     void Start()
-    {
-        sprite = GetComponent<SpriteRenderer>();
-    }
+        => sprite = GetComponent<SpriteRenderer>();
 
     public void LevelSprite()
     {
-        if (sprite == null)
-            sprite = GetComponent<SpriteRenderer>();
-
-        switch (level)
-        {
-            case LEVEL.Level1:
-                sprite.sprite = Sprites.fishImg[0];
-                break;
-            case LEVEL.Level2:
-                sprite.sprite = Sprites.fishImg[1];
-                break;
-            case LEVEL.Level3:
-                sprite.sprite = Sprites.fishImg[3];
-                break;
-            case LEVEL.Level4:
-                sprite.sprite = Sprites.fishImg[5];
-                break;
-            case LEVEL.Level5:
-                sprite.sprite = Sprites.fishImg[7];
-                break;
-            case LEVEL.Level6:
-                sprite.sprite = Sprites.fishImg[9];
-                break;
-            case LEVEL.Level7:
-                sprite.sprite = Sprites.fishImg[11];
-                break;
-            case LEVEL.level8:
-                sprite.sprite = Sprites.fishImg[12];
-                break;
-            case LEVEL.level9:
-                sprite.sprite = Sprites.fishImg[13];
-                break;
-        }
+        TryGetComponent(out sprite);
+        sprite.sprite = Sprites.fishImg[spriteIdx[(int)level - 1]];
     }
 }
