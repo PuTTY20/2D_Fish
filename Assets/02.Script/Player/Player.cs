@@ -18,7 +18,6 @@ public class Player : MonoBehaviour
     */
 
     [SerializeField] LEVEL level = LEVEL.Level1;
-
     internal SpriteRenderer sprite;
 
     readonly int[] spriteIdx = { 0, 1, 3, 5, 7, 9, 11, 12, 13 };
@@ -27,8 +26,5 @@ public class Player : MonoBehaviour
         => sprite = GetComponent<SpriteRenderer>();
 
     public void LevelSprite()
-    {
-        TryGetComponent(out sprite);
-        sprite.sprite = Sprites.fishImg[spriteIdx[(int)level - 1]];
-    }
+        => sprite.sprite = Sprites.fishImg[spriteIdx[(int)level - 1]];
 }
