@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     * 9: eel
     */
 
-    [SerializeField] LEVEL level = LEVEL.Level1;
+    public LEVEL level = LEVEL.Level1;
     internal SpriteRenderer sprite;
 
     readonly int[] spriteIdx = { 0, 1, 3, 5, 7, 9, 11, 12, 13 };
