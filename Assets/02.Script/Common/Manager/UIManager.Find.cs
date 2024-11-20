@@ -9,11 +9,11 @@ public partial class UIManager : MonoBehaviour
     Image fish2;
     Image fish3;
 
-    readonly string can = "Canvas";
+    readonly string _canvas = "Canvas";
 
     void Start()
     {
-        canvas = GameObject.Find(can).transform;
+        canvas = GameObject.Find(_canvas).transform;
         Life = canvas.GetChild(0).transform;
         fish1 = Life.GetChild(0).GetComponent<Image>();
         fish2 = Life.GetChild(1).GetComponent<Image>();
@@ -25,7 +25,7 @@ public partial class UIManager : MonoBehaviour
     void GetSprite()
     {
         fish1.sprite = Sprites.fishImg[0];
-        fish2.sprite = Sprites.fishImg[1];
-        fish3.sprite = Sprites.fishImg[2];
+        fish2.sprite = Sprites.fishImg[0];
+        fish3.sprite = Sprites.fishImg[0];
     }
 }

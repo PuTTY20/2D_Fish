@@ -22,9 +22,11 @@ public class Player : MonoBehaviour
 
     readonly int[] spriteIdx = { 0, 1, 3, 5, 7, 9, 11, 12, 13 };
 
-    void Start()
-        => sprite = GetComponent<SpriteRenderer>();
-
     public void LevelSprite()
-        => sprite.sprite = Sprites.fishImg[spriteIdx[(int)level - 1]];
+    {
+        if (sprite == null)
+            sprite = GetComponent<SpriteRenderer>();
+        
+        sprite.sprite = Sprites.fishImg[spriteIdx[(int)level - 1]];
+    }
 }
