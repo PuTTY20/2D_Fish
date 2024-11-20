@@ -38,9 +38,8 @@ public class Move : MonoBehaviour
 
     void SpriteFlip()
     {
-        if (movement.x != 0)
+        if (player != null && player.sprite != null && movement.x != 0)
             player.sprite.flipX = movement.x < 0;
-        // Debug.Log("rb.velocity" + rb.velocity); 바로 moveSpeed값인 5 나옴
     }
 
     private void LimitPos()

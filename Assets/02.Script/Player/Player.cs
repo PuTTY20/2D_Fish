@@ -22,6 +22,9 @@ public class Player : MonoBehaviour
 
     readonly int[] spriteIdx = { 0, 1, 3, 5, 7, 9, 11, 12, 13 };
 
+    void Start()
+        => sprite = GetComponent<SpriteRenderer>();
+
     public void LevelSprite()
     {
         if (sprite == null)
