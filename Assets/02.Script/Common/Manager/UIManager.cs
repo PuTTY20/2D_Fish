@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public partial class UIManager : MonoBehaviour
 {
-    public void UpdateLife(Sprite sp)
+    public void UpdateLife(Sprite sp, Sprite die)
     {
         if (GameManager.instance.life == 3)
         {
@@ -16,21 +16,21 @@ public partial class UIManager : MonoBehaviour
         {
             fish1.sprite = sp;
             fish2.sprite = sp;
-            fish3.sprite = null;
+            fish3.sprite = die;
         }
 
         else if (GameManager.instance.life == 1)
         {
             fish1.sprite = sp;
-            fish2.sprite = null;
-            fish3.sprite = null;
+            fish2.sprite = die;
+            fish3.sprite = die;
         }
 
         else if (GameManager.instance.life == 0)
         {
-            fish1.sprite = null;
-            fish2.sprite = null;
-            fish3.sprite = null;
+            fish1.sprite = die;
+            fish2.sprite = die;
+            fish3.sprite = die;
         }
     }
 }

@@ -38,8 +38,8 @@ public class Move : MonoBehaviour
 
     void SpriteFlip()
     {
-        if (player != null && player.sprite != null && movement.x != 0)
-            player.sprite.flipX = movement.x < 0;
+        if (player != null && player.rend != null && movement.x != 0)
+            player.rend.flipX = movement.x < 0;
     }
 
     private void LimitPos()

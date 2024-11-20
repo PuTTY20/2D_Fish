@@ -19,7 +19,6 @@ public class Damage : MonoBehaviour
         {
             life--;
             GameManager.instance.life = life;
-            GameManager.UI.UpdateLife(player.sprite.sprite);
 
             if (life == 0)
                 GameManager.instance.isGameOver = true;
