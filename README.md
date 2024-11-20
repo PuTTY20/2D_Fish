@@ -9,10 +9,23 @@
 
 # 241117
 1. Enemy 물고기 움직임 구현
+2. Player 충돌시 물고기 UI 업데이트
 
 
 
 
+/*
+* 0: 0.7 no line purple fish
+* 1: no line purple fish.       <- player start point
+* 2: purple fish
+* 3: orange fish
+* 4: blue fish
+* 5: green fish
+* 6: red fish
+* 7: blow fish
+* 8: small eel
+* 9: eel
+*/
 1. 1단계: 보라색 물고기
 퀘스트 목표: 작은 먹이 10개 먹기
 설명: 보라색 물고기로 시작하며, 작은 먹이를 잡아 성장하는 첫 번째 단계.
