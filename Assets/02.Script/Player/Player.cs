@@ -7,16 +7,24 @@ public class Player : MonoBehaviour
     
     public LEVEL level = LEVEL.Level1;
     internal SpriteRenderer rend;
+    private Sprite dieSprite;
 
     void Awake()
-        => rend = GetComponent<SpriteRenderer>();
+    {
+        rend = GetComponent<SpriteRenderer>();
+        Sprites.dieSprites.TryGetValue(level, out dieSprite);   // 현재 레벨에 해당하는 dieSprite 미리 저장
+    }
 
     void Update()
     {
-        if (Sprites.dieSprites.TryGetValue(level, out Sprite dieSprite))
-            GameManager.UI.UpdateLife(rend.sprite, dieSprite);
+        if (dieSprite != null)
+            GameManager.UI.UpdateLifeSprite(rend.sprite, dieSprite);
     }
     
+    // 레벨에 따른 스프라이트 변경
     public void LevelSprite()
-        => rend.sprite = Sprites.levelSprites[level];
+    {
+        rend.sprite = Sprites.levelSprites[level];  // 현재 레벨에 맞는 스프라이트로 변경
+        Sprites.dieSprites.TryGetValue(level, out dieSprite);  // dieSprite 업데이트
+    }
 }
