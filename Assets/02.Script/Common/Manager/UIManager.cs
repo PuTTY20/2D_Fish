@@ -7,30 +7,30 @@ public partial class UIManager : MonoBehaviour
     {
         if (GameManager.instance.life == 3)
         {
-            fish1.sprite = sp;
-            fish2.sprite = sp;
-            fish3.sprite = sp;
+            for (int i = 0; i < 3; i++)
+                life[i].sprite = sp;
         }
 
         else if (GameManager.instance.life == 2)
         {
-            fish1.sprite = sp;
-            fish2.sprite = sp;
-            fish3.sprite = die;
+            for (int i = 0; i < 2; i++)
+                life[i].sprite = sp;
+
+            life[2].sprite = die;
         }
 
         else if (GameManager.instance.life == 1)
         {
-            fish1.sprite = sp;
-            fish2.sprite = die;
-            fish3.sprite = die;
+            life[0].sprite = sp;
+
+            for (int i = 1; i < 3; i++)
+                life[i].sprite = die;
         }
 
         else if (GameManager.instance.life == 0)
         {
-            fish1.sprite = die;
-            fish2.sprite = die;
-            fish3.sprite = die;
+            for (int i = 0; i < 3; i++)
+                life[i].sprite = die;
         }
     }
 }
