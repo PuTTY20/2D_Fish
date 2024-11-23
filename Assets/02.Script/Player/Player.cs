@@ -24,6 +24,9 @@ public class Player : MonoBehaviour
     // 레벨에 따른 스프라이트 변경
     public void LevelSprite()
     {
+        if (rend == null)
+            rend = GetComponent<SpriteRenderer>();  // rend가 없으면 초기화
+            
         rend.sprite = Sprites.levelSprites[level];  // 현재 레벨에 맞는 스프라이트로 변경
         Sprites.dieSprites.TryGetValue(level, out dieSprite);  // dieSprite 업데이트
     }
