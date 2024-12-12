@@ -6,25 +6,9 @@ public abstract class LevelSystem : MonoBehaviour
     
     public LEVEL level = LEVEL.Level1;
     public SpriteRenderer rend;
-    protected Sprite dieSprite;
 
     protected virtual void Awake()
     {
         rend = GetComponent<SpriteRenderer>();
-        UpdateDieSprite();
-    }
-
-    protected void UpdateDieSprite()
-    {
-        Sprites.dieSprites.TryGetValue(level, out dieSprite);
-    }
-
-    public virtual void LevelSprite()
-    {
-        if (rend == null)
-            rend = GetComponent<SpriteRenderer>();
-            
-        rend.sprite = Sprites.levelSprites[level];
-        UpdateDieSprite();
     }
 } 

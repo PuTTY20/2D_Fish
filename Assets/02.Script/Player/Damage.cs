@@ -17,11 +17,14 @@ public class Damage : MonoBehaviour
     {
         if (col.TryGetComponent(out Enemy _enemy) && life > 0)
         {
-            life--;
-            GameManager.instance.life = life;
+            if (_enemy.level > player.level)
+            {
+                life--;
+                GameManager.instance.life = life;
 
-            if (life == 0)
-                GameManager.instance.isGameOver = true;
+                if (life == 0)
+                    GameManager.instance.isGameOver = true;
+            }
         }
     }
 }
