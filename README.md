@@ -12,7 +12,8 @@
 2. Player 충돌시 물고기 UI 업데이트
 
 # 241212
-1. Quest에 맞춰 수정
+1. 레벨 관련 스크립트를 따로 빼서 player와 Enemy 물고기가 상속받도록 수정
+2. QuestManager에서 Dictionary를 사용해 레벨에 따라 퀘스트 데이터를 가져오도록 수정
 
 
 /*

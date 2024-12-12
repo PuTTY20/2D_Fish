@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,10 +11,8 @@ public class QuestManager : MonoBehaviour
         public int curCnt;   // 현재 진행도
     }
 
-    [SerializeField]
-    private List<QuestData> questList = new List<QuestData>();
-
-    private Dictionary<Player.LEVEL, QuestData> questDict;
+    List<QuestData> questList = new List<QuestData>();
+    Dictionary<Player.LEVEL, QuestData> questDict;
 
     void Awake()
     {
@@ -50,13 +47,13 @@ public class QuestManager : MonoBehaviour
 
     public QuestData GetQuestData(int level)
     {
-        Player.LEVEL questLevel = (Player.LEVEL)level;
+        Player.LEVEL playerLevel = (Player.LEVEL)level;
         
-        // Dictionary에 해당 레벨이 없으면 Level1의 퀘스트 반환
-        if (!questDict.ContainsKey(questLevel))
-            return questDict[Player.LEVEL.Level1];
+        // Dictionary에 해당 레벨이 없으면 null 반환
+        if (!questDict.ContainsKey(playerLevel))
+            return null;
             
-        return questDict[questLevel];
+        return questDict[playerLevel];
     }
 
     public void QuestProgress(int level, int value)
