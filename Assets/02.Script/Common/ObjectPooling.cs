@@ -22,21 +22,22 @@ public class ObjectPooling : MonoBehaviour
 
         fishGroup = new GameObject("Fish Group");
 
-        StartCoroutine(CreateFishPool(level0));
-        StartCoroutine(CreateFishPool(level1));
-        StartCoroutine(CreateFishPool(level2));
-        StartCoroutine(CreateFishPool(level3));
-        StartCoroutine(CreateFishPool(level4));
-        StartCoroutine(CreateFishPool(level5));
-        StartCoroutine(CreateFishPool(level6));
+        StartCoroutine(CreateFishPool(level0, LevelSystem.LEVEL.Level0));
+        StartCoroutine(CreateFishPool(level1, LevelSystem.LEVEL.Level1));
+        StartCoroutine(CreateFishPool(level2, LevelSystem.LEVEL.Level2));
+        StartCoroutine(CreateFishPool(level3, LevelSystem.LEVEL.Level3));
+        StartCoroutine(CreateFishPool(level4, LevelSystem.LEVEL.Level4));
+        StartCoroutine(CreateFishPool(level5, LevelSystem.LEVEL.Level5));
+        StartCoroutine(CreateFishPool(level6, LevelSystem.LEVEL.Level6));
     }
 
-    IEnumerator CreateFishPool(GameObject fishObj)
+    IEnumerator CreateFishPool(GameObject fishObj, LevelSystem.LEVEL level)
     {
         for (int i = 0; i < size; i++)
         {
             var fish = Instantiate(fishObj, fishGroup.transform);
-            fish.AddComponent<Enemy>();
+            var enemy = fish.AddComponent<Enemy>();
+            enemy.level = level;
             fish.SetActive(false);
             fishList.Add(fish);
         }

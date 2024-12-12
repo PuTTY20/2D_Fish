@@ -25,8 +25,10 @@ public partial class UIManager : MonoBehaviour
         content = quest.GetChild(2).GetComponent<Text>();
 
         GetSprite();
-        SetInitQuest();
     }
+
+    void Update()
+        => ShowQuest();
 
     void GetSprite()
     {
@@ -34,9 +36,12 @@ public partial class UIManager : MonoBehaviour
             life[i].sprite = Sprites.fishImg[0];
     }
 
-    void SetInitQuest()
+    void ShowQuest()
     {
-        level.text = Player.LEVEL.Level1.ToString();
-        content.text = "작은 먹이 10개 먹기(0/10)";
+        var currentLevel = Player.LEVEL.Level1;
+        var questData = GameManager.QuestManager.GetQuestData(currentLevel);
+
+        level.text = currentLevel.ToString();
+        content.text = $"{questData.content}({questData.curCnt}/{questData.targetCnt})";
     }
 }

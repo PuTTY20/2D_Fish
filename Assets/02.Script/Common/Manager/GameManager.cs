@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static UIManager UI;
     public static PoolingManager PoolManager;
     public static ObjectPooling ObjectPooling;
+    public static QuestManager QuestManager;
 
     public int life = 3;
     public bool isGameOver = false;
@@ -28,5 +29,6 @@ public class GameManager : MonoBehaviour
         TryGetComponent(out UI);
         TryGetComponent(out PoolManager);
         TryGetComponent(out ObjectPooling);
+        TryGetComponent(out QuestManager);
     }
 }

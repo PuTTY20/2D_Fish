@@ -960,7 +960,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 15
-  m_Sprite: {fileID: -18172390, guid: c81db545fe5064121b5b2fb0716da947, type: 3}
+  m_Sprite: {fileID: -1746425256, guid: c81db545fe5064121b5b2fb0716da947, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1049,7 +1049,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a765ab14ffb948a2b54d710976e6de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 2
+  level: 1
+  rend: {fileID: 658646242}
 --- !u!61 &658646248
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3012,6 +3013,7 @@ GameObject:
   - component: {fileID: 2014412079}
   - component: {fileID: 2014412078}
   - component: {fileID: 2014412077}
+  - component: {fileID: 2014412080}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3086,6 +3088,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7496933f7a74487d86e47abfb99c604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2014412080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014412073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f673b2624d4203488e086abaa5ffe8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questList: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

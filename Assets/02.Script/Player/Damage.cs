@@ -25,6 +25,9 @@ public class Damage : MonoBehaviour
                 if (life == 0)
                     GameManager.instance.isGameOver = true;
             }
+
+            else if (_enemy.level <= player.level)
+                GameManager.QuestManager.QuestProgress(player.level, 1);
         }
     }
 }
