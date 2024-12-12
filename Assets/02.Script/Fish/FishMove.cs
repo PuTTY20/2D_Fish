@@ -13,7 +13,6 @@ public class FishMove : MonoBehaviour
         rend = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         speed = Random.Range(1f, 4f);
-
         rb.gravityScale = 0;
     }
 
