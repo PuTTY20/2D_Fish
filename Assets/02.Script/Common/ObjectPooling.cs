@@ -31,20 +31,13 @@ public class ObjectPooling : MonoBehaviour
         StartCoroutine(CreateFishPool(level6));
     }
 
-    IEnumerator CreateFishPool(GameObject fishLevel)
+    IEnumerator CreateFishPool(GameObject fishObj)
     {
         for (int i = 0; i < size; i++)
         {
-            var fish = Instantiate(fishLevel, fishGroup.transform);
+            var fish = Instantiate(fishObj, fishGroup.transform);
+            fish.AddComponent<Enemy>();
             fish.SetActive(false);
-            
-            string levelStr = fishLevel.name;
-            if (int.TryParse(levelStr, out int level))
-            {
-                Fish fishComponent = fish.GetComponent<Fish>();
-                fishComponent.Initialize((Player.LEVEL)level);
-            }
-            
             fishList.Add(fish);
         }
         yield return new WaitForSeconds(0.1f);

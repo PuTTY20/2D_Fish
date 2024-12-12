@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FishMove : MonoBehaviour
+public class EnemyMove : MonoBehaviour
 {
     private Transform tr;
     private SpriteRenderer rend;

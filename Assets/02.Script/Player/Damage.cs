@@ -15,16 +15,13 @@ public class Damage : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.TryGetComponent(out Fish fish) && life > 0)
+        if (col.TryGetComponent(out Enemy _enemy) && life > 0)
         {
-            if (fish.level < player.level)
-            {
-                life--;
-                GameManager.instance.life = life;
+            life--;
+            GameManager.instance.life = life;
 
-                if (life == 0)
-                    GameManager.instance.isGameOver = true;
-            }
+            if (life == 0)
+                GameManager.instance.isGameOver = true;
         }
     }
 }

@@ -17,7 +17,7 @@ public class PoolingManager : MonoBehaviour
                 Vector2 spawnPos = GetRandomPos();
                 selectedFish.transform.position = spawnPos;
                 selectedFish.SetActive(true);
-                selectedFish.GetComponent<FishMove>().Move(spawnPos.x > 0);
+                selectedFish.GetComponent<EnemyMove>().Move(spawnPos.x > 0);
                 yield return new WaitForSeconds(2.0f);
             }
         }
