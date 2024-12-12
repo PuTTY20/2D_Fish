@@ -8,7 +8,5 @@ public abstract class LevelSystem : MonoBehaviour
     public SpriteRenderer rend;
 
     protected virtual void Awake()
-    {
-        rend = GetComponent<SpriteRenderer>();
-    }
+        => rend = GetComponent<SpriteRenderer>();
 } 

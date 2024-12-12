@@ -3,14 +3,6 @@ using UnityEngine;
 
 public class QuestManager : MonoBehaviour
 {
-    [System.Serializable]
-    public class QuestData
-    {
-        public string content;     // 퀘스트 내용
-        public int targetCnt;    // 목표 수
-        public int curCnt;   // 현재 진행도
-    }
-
     List<QuestData> questList = new List<QuestData>();
     Dictionary<Player.LEVEL, QuestData> questDict;
 
@@ -48,17 +40,19 @@ public class QuestManager : MonoBehaviour
     public QuestData GetQuestData(int level)
     {
         Player.LEVEL playerLevel = (Player.LEVEL)level;
-        
+
         // Dictionary에 해당 레벨이 없으면 null 반환
         if (!questDict.ContainsKey(playerLevel))
             return null;
-            
+
         return questDict[playerLevel];
     }
 
     public void QuestProgress(int level, int value)
     {
-        if (questDict.ContainsKey((Player.LEVEL)level))
-            questDict[(Player.LEVEL)level].curCnt += value;
+        var questData = GetQuestData(level);
+
+        if (questData != null && questData.curCnt < questData.targetCnt)
+            questData.curCnt += value;
     }
 }

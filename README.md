@@ -10,6 +10,8 @@
 # 241117
 1. Enemy 물고기 움직임 구현
 2. Player 충돌시 물고기 UI 업데이트
+3. GameOver 처리
+- poolingManager에서 물고기 생성 중지
 
 # 241212
 1. 레벨 관련 스크립트를 따로 빼서 player와 Enemy 물고기가 상속받도록 수정
