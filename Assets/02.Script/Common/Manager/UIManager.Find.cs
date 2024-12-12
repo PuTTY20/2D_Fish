@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public partial class UIManager : MonoBehaviour
 {
+    Player player;
     Transform canvas;
     Transform Life;
     Image[] life = new Image[3];
@@ -14,6 +15,8 @@ public partial class UIManager : MonoBehaviour
 
     void Start()
     {
+        player = GameObject.FindObjectOfType<Player>();
+        
         canvas = GameObject.Find(_canvas).transform;
         Life = canvas.GetChild(0).transform;
 
@@ -34,14 +37,5 @@ public partial class UIManager : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
             life[i].sprite = Sprites.fishImg[0];
-    }
-
-    void ShowQuest()
-    {
-        var currentLevel = Player.LEVEL.Level1;
-        var questData = GameManager.QuestManager.GetQuestData(currentLevel);
-
-        level.text = currentLevel.ToString();
-        content.text = $"{questData.content}({questData.curCnt}/{questData.targetCnt})";
     }
 }

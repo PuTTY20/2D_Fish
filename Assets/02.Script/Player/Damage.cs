@@ -27,7 +27,7 @@ public class Damage : MonoBehaviour
             }
 
             else if (_enemy.level <= player.level)
-                GameManager.QuestManager.QuestProgress(player.level, 1);
+                GameManager.QuestManager.QuestProgress((int)player.level, 1);
         }
     }
 }

@@ -48,12 +48,20 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-    public QuestData GetQuestData(Player.LEVEL level)
-        => questDict[level];
-
-    public void QuestProgress(Player.LEVEL level, int value)
+    public QuestData GetQuestData(int level)
     {
-        if (questDict.ContainsKey(level))
-            questDict[level].curCnt += value;
+        Player.LEVEL questLevel = (Player.LEVEL)level;
+        
+        // Dictionary에 해당 레벨이 없으면 Level1의 퀘스트 반환
+        if (!questDict.ContainsKey(questLevel))
+            return questDict[Player.LEVEL.Level1];
+            
+        return questDict[questLevel];
+    }
+
+    public void QuestProgress(int level, int value)
+    {
+        if (questDict.ContainsKey((Player.LEVEL)level))
+            questDict[(Player.LEVEL)level].curCnt += value;
     }
 }
