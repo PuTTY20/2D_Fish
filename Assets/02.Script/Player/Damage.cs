@@ -17,7 +17,7 @@ public class Damage : MonoBehaviour
     {
         if (col.TryGetComponent(out Enemy _enemy) && life > 0)
         {
-            if (_enemy.level > player.level)
+            if (_enemy.level >= player.level)
             {
                 life--;
                 GameManager.instance.life = life;
@@ -26,7 +26,7 @@ public class Damage : MonoBehaviour
                     GameManager.instance.isGameOver = true;
             }
 
-            else if (_enemy.level <= player.level)
+            else if (_enemy.level < player.level)
                 GameManager.QuestManager.QuestProgress((int)player.level, 1);
         }
     }

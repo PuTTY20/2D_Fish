@@ -8,7 +8,7 @@ public class ObjectPooling : MonoBehaviour
     public List<GameObject> offList = new List<GameObject>();
     GameObject fishGroup;
 
-    int size = 7;
+    int size = 15;
 
     void Awake()
     {

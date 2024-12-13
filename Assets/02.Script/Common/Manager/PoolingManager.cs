@@ -18,7 +18,7 @@ public class PoolingManager : MonoBehaviour
                 selectedFish.transform.position = spawnPos;
                 selectedFish.SetActive(true);
                 selectedFish.GetComponent<EnemyMove>().Move(spawnPos.x > 0);
-                yield return new WaitForSeconds(2.0f);
+                yield return new WaitForSeconds(0.5f);
             }
         }
     }

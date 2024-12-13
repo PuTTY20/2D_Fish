@@ -6,7 +6,7 @@ public class Enemy : LevelSystem
     {
         if (col.TryGetComponent(out Player player))
         {
-            if (player.level >= level)
+            if (player.level > level)
                 GameManager.ObjectPooling.ReturnFish(this.gameObject);
         }
     }

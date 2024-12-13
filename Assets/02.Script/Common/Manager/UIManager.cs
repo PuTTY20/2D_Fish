@@ -17,7 +17,7 @@ public partial class UIManager : MonoBehaviour
         var currentLevel = (int)player.level;
         var questData = GameManager.QuestManager.GetQuestData(currentLevel);
 
-        level.text = currentLevel.ToString();
+        level.text = "Level " + currentLevel.ToString();
         content.text = $"{questData.content}({questData.curCnt}/{questData.targetCnt})";
     }
 }
