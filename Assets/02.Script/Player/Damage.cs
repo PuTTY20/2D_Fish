@@ -21,7 +21,6 @@ public class Damage : MonoBehaviour
             if (_enemy.level >= player.level)
             {
                 life--;
-                Debug.Log(life);
                 GameManager.instance.Life = life;
 
                 if (life == 0)
@@ -38,4 +37,10 @@ public class Damage : MonoBehaviour
 
     void UpdateLife(int life)
         => this.life = life;
+
+    void OnDestroy()
+    {
+        if (GameManager.instance != null)
+            GameManager.instance.OnLifeUpdate -= UpdateLife;
+    }
 }

@@ -21,6 +21,7 @@
 1. StartScene, PlayScene 분리
 2. 퀘스트 목표 달성시 플레이어 레벨업
 - 스프라이트 업데이트 및 life 초기화
+- player canvas를 만들어 Level Up 표시
 3. 플레이어 Die
 - Die UI 표시
 4. 게임 재시작 버튼 추가

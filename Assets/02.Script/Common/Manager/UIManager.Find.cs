@@ -15,7 +15,7 @@ public partial class UIManager : MonoBehaviour
     Text level;
     Text content;
 
-    readonly string _canvas = "Canvas";
+    readonly string _canvas = "UI";
 
     void Start()
     {

@@ -29,6 +29,7 @@ public class Player : LevelSystem
         level++;
         GameManager.instance.Life = 3;
         LevelSprite();
+        SendMessage("ShowLevelUpText");
     }
 
 
