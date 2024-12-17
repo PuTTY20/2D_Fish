@@ -3,6 +3,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public Player player { get; private set; }
 
     public static UIManager UI;
     public static PoolingManager PoolManager;
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         instance = this;
+        player = FindObjectOfType<Player>();
 
         GetComponents();
     }

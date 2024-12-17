@@ -21,6 +21,14 @@ public class Player : LevelSystem
             GameManager.UI.UpdateLifeSprite(rend.sprite, dieSprite);
     }
 
+    public void LevelUp()
+    {
+        level++;
+        GameManager.instance.life = 3;
+        LevelSprite();
+    }
+
+
     public virtual void LevelSprite()
     {
         if (rend == null)

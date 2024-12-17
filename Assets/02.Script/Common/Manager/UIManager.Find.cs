@@ -6,10 +6,12 @@ public partial class UIManager : MonoBehaviour
     Player player;
     Transform canvas;
     Transform Life;
-    Image[] life = new Image[3];
     Transform quest;
+    Transform dieTr;
+    Image[] life = new Image[3];
     Text level;
     Text content;
+    Text die;
 
     readonly string _canvas = "Canvas";
 
@@ -26,6 +28,9 @@ public partial class UIManager : MonoBehaviour
         quest = canvas.GetChild(1).transform;
         level = quest.GetChild(0).GetChild(0).GetComponent<Text>();
         content = quest.GetChild(2).GetComponent<Text>();
+
+        dieTr = canvas.GetChild(2).transform;
+        die = dieTr.GetChild(0).GetComponent<Text>();
 
         GetSprite();
     }

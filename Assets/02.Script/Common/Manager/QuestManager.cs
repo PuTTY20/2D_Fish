@@ -17,11 +17,11 @@ public class QuestManager : MonoBehaviour
         questList = new List<QuestData>()
         {
             new QuestData{ content = "물고기 5마리 잡기", targetCnt = 5, curCnt = 0 },
-            new QuestData{ content = "물고기 5마리 잡기", targetCnt = 5, curCnt = 0 },
             new QuestData{ content = "물고기 10마리 잡기", targetCnt = 10, curCnt = 0 },
-            new QuestData{ content = "물고기 5마리 잡기", targetCnt = 5, curCnt = 0 },
-            new QuestData{ content = "물고기 10마리 잡기", targetCnt = 10, curCnt = 0 },
-            new QuestData{ content = "물고기 5마리 잡기", targetCnt = 5, curCnt = 0 },
+            new QuestData{ content = "물고기 15마리 잡기", targetCnt = 15, curCnt = 0 },
+            new QuestData{ content = "물고기 20마리 잡기", targetCnt = 20, curCnt = 0 },
+            new QuestData{ content = "물고기 25마리 잡기", targetCnt = 25, curCnt = 0 },
+            new QuestData{ content = "물고기 30마리 잡기", targetCnt = 30, curCnt = 0 }
         };
     }
 
@@ -29,11 +29,11 @@ public class QuestManager : MonoBehaviour
     {
         questDict = new Dictionary<Player.LEVEL, QuestData>();
 
-        // Player.LEVEL enum 값을 순차적으로 할당
-        for (int i = 0; i < questList.Count; i++)
+        // LEVEL_1부터 LEVEL_6까지만 퀘스트 할당
+        for (int i = 1; i <= 6; i++)
         {
             Player.LEVEL level = (Player.LEVEL)i;
-            questDict.Add(level, questList[i]);
+            questDict.Add(level, questList[i-1]);  // i-1로 수정
         }
     }
 
@@ -52,7 +52,20 @@ public class QuestManager : MonoBehaviour
     {
         var questData = GetQuestData(level);
 
-        if (questData != null && questData.curCnt < questData.targetCnt)
+        if (questData != null && !questData.isCompleted && questData.curCnt < questData.targetCnt)
+        {
             questData.curCnt += value;
+            
+            // 퀘스트 완료 체크
+            if (questData.curCnt >= questData.targetCnt)
+            {
+                questData.isCompleted = true;
+                questData.curCnt = questData.targetCnt;  // 최대값으로 고정
+                
+                // 플레이어 레벨업
+                if (GameManager.instance.player != null)
+                    GameManager.instance.player.LevelUp();
+            }
+        }
     }
 }
