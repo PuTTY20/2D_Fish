@@ -4,12 +4,13 @@ using UnityEngine.UI;
 public partial class UIManager : MonoBehaviour
 {
     Player player;
-    
+
     Transform canvas;
     Transform lifeTr;
     Transform questTr;
     Transform dieTr;
     Image[] life = new Image[3];
+    Button backBtn;
     Button replayBtn;
     Text level;
     Text content;
@@ -31,9 +32,9 @@ public partial class UIManager : MonoBehaviour
         content = questTr.GetChild(2).GetComponent<Text>();
 
         dieTr = canvas.GetChild(2).transform;
-        replayBtn = dieTr.GetChild(1).GetComponent<Button>();
         dieTr.gameObject.SetActive(false);
-        replayBtn.gameObject.SetActive(false);
+        backBtn = dieTr.GetChild(1).GetComponent<Button>();
+        replayBtn = dieTr.GetChild(2).GetComponent<Button>();
 
         GetSprite();
     }

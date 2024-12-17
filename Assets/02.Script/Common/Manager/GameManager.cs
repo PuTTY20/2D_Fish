@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     public int life = 3;
     public bool isGameOver = false;
+    public bool isReplay = false;
 
     void Awake()
     {
@@ -32,5 +33,10 @@ public class GameManager : MonoBehaviour
         TryGetComponent(out PoolManager);
         TryGetComponent(out ObjectPooling);
         TryGetComponent(out QuestManager);
+    }
+
+    void Replay()
+    {
+        isReplay = true;
     }
 }
