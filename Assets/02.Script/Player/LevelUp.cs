@@ -21,7 +21,5 @@ public class LevelUp : MonoBehaviour
     }
 
     void HideLevelUpText()
-    {
-        levelUp.gameObject.SetActive(false);
-    }
+        => levelUp.gameObject.SetActive(false);
 }

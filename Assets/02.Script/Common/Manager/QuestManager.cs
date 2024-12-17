@@ -16,12 +16,17 @@ public class QuestManager : MonoBehaviour
     {
         questList = new List<QuestData>()
         {
-            new QuestData{ content = "물고기 5마리 잡기", targetCnt = 5, curCnt = 0 },
-            new QuestData{ content = "물고기 10마리 잡기", targetCnt = 10, curCnt = 0 },
-            new QuestData{ content = "물고기 15마리 잡기", targetCnt = 15, curCnt = 0 },
-            new QuestData{ content = "물고기 20마리 잡기", targetCnt = 20, curCnt = 0 },
-            new QuestData{ content = "물고기 25마리 잡기", targetCnt = 25, curCnt = 0 },
-            new QuestData{ content = "물고기 30마리 잡기", targetCnt = 30, curCnt = 0 }
+            new QuestData{ content = "물고기 5마리 잡기", targetCnt = 5, curCnt = 0 },       // 1 to 2
+            new QuestData{ content = "물고기 10마리 잡기", targetCnt = 10, curCnt = 0 },     // 2 to 3
+            new QuestData{ content = "물고기 15마리 잡기", targetCnt = 15, curCnt = 0 },     // 3 to 4
+            new QuestData{ content = "물고기 20마리 잡기", targetCnt = 20, curCnt = 0 },     // 4 to 5
+            new QuestData{ content = "물고기 25마리 잡기", targetCnt = 25, curCnt = 0 },     // 5 to 6
+            new QuestData{ content = "물고기 30마리 잡기", targetCnt = 30, curCnt = 0 },     // 6 to 7
+
+            new QuestData{ content = "작은 장어 물리치기", targetCnt = 1, curCnt = 0 },
+            new QuestData{ content = "장어 물리치기", targetCnt = 1, curCnt = 0 }
+
+            // 만렙 도달
         };
     }
 
@@ -29,8 +34,7 @@ public class QuestManager : MonoBehaviour
     {
         questDict = new Dictionary<Player.LEVEL, QuestData>();
 
-        // LEVEL_1부터 LEVEL_6까지만 퀘스트 할당
-        for (int i = 1; i <= 6; i++)
+        for (int i = 1; i <= 8; i++)
         {
             Player.LEVEL level = (Player.LEVEL)i;
             questDict.Add(level, questList[i-1]);
