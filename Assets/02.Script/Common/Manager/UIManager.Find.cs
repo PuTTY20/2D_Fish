@@ -35,6 +35,8 @@ public partial class UIManager : MonoBehaviour
         dieTr.gameObject.SetActive(false);
         backBtn = dieTr.GetChild(1).GetComponent<Button>();
         replayBtn = dieTr.GetChild(2).GetComponent<Button>();
+        backBtn.onClick.AddListener(GameManager.Scene.LoadStartScene);
+        replayBtn.onClick.AddListener(GameManager.Scene.LoadPlayScene);
 
         GetSprite();
     }

@@ -9,10 +9,10 @@ public class GameManager : MonoBehaviour
     public static PoolingManager PoolManager;
     public static ObjectPooling ObjectPooling;
     public static QuestManager QuestManager;
+    public static SceneLoader Scene;
 
     public int life = 3;
     public bool isGameOver = false;
-    public bool isReplay = false;
 
     void Awake()
     {
@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
         instance = this;
         player = FindObjectOfType<Player>();
 
@@ -33,10 +34,6 @@ public class GameManager : MonoBehaviour
         TryGetComponent(out PoolManager);
         TryGetComponent(out ObjectPooling);
         TryGetComponent(out QuestManager);
-    }
-
-    void Replay()
-    {
-        isReplay = true;
+        TryGetComponent(out Scene);
     }
 }
