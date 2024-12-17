@@ -11,6 +11,7 @@ public class Damage : MonoBehaviour
     {
         life = initLife;
         player = GetComponent<Player>();
+        GameManager.instance.OnLifeUpdate += UpdateLife;
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -20,7 +21,8 @@ public class Damage : MonoBehaviour
             if (_enemy.level >= player.level)
             {
                 life--;
-                GameManager.instance.life = life;
+                Debug.Log(life);
+                GameManager.instance.Life = life;
 
                 if (life == 0)
                 {
@@ -33,4 +35,7 @@ public class Damage : MonoBehaviour
                 GameManager.QuestManager.QuestProgress((int)player.level, 1);
         }
     }
+
+    void UpdateLife(int life)
+        => this.life = life;
 }

@@ -33,7 +33,7 @@ public class QuestManager : MonoBehaviour
         for (int i = 1; i <= 6; i++)
         {
             Player.LEVEL level = (Player.LEVEL)i;
-            questDict.Add(level, questList[i-1]);  // i-1로 수정
+            questDict.Add(level, questList[i-1]);
         }
     }
 
@@ -52,20 +52,29 @@ public class QuestManager : MonoBehaviour
     {
         var questData = GetQuestData(level);
 
-        if (questData != null && !questData.isCompleted && questData.curCnt < questData.targetCnt)
+        if (questData != null && !questData.isClear && questData.curCnt < questData.targetCnt)
         {
             questData.curCnt += value;
             
             // 퀘스트 완료 체크
             if (questData.curCnt >= questData.targetCnt)
             {
-                questData.isCompleted = true;
+                questData.isClear = true;
                 questData.curCnt = questData.targetCnt;  // 최대값으로 고정
                 
                 // 플레이어 레벨업
                 if (GameManager.instance.player != null)
                     GameManager.instance.player.LevelUp();
             }
+        }
+    }
+
+    public void QuestReset()
+    {
+        foreach (var quest in questList)
+        {
+            quest.curCnt = 0;
+            quest.isClear = false;
         }
     }
 }

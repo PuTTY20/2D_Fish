@@ -20,7 +20,7 @@ public partial class UIManager : MonoBehaviour
     void Start()
     {
         player = GameObject.FindObjectOfType<Player>();
-        
+
         canvas = GameObject.Find(_canvas).transform;
         lifeTr = canvas.GetChild(0).transform;
 
@@ -36,7 +36,11 @@ public partial class UIManager : MonoBehaviour
         backBtn = dieTr.GetChild(1).GetComponent<Button>();
         replayBtn = dieTr.GetChild(2).GetComponent<Button>();
         backBtn.onClick.AddListener(GameManager.Scene.LoadStartScene);
-        replayBtn.onClick.AddListener(GameManager.Scene.LoadPlayScene);
+        replayBtn.onClick.AddListener(() =>
+        {
+            dieTr.gameObject.SetActive(false);
+            GameManager.instance.Reset();
+        });
 
         GetSprite();
     }

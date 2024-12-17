@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Player : LevelSystem
 {
+    Transform tr;
     protected Sprite dieSprite;
 
     protected override void Awake()
@@ -9,6 +10,8 @@ public class Player : LevelSystem
         base.Awake();
         UpdateDieSprite();
     }
+
+    void Start() => tr = transform;
 
     protected void UpdateDieSprite()
     {
@@ -24,7 +27,7 @@ public class Player : LevelSystem
     public void LevelUp()
     {
         level++;
-        GameManager.instance.life = 3;
+        GameManager.instance.Life = 3;
         LevelSprite();
     }
 
@@ -36,5 +39,12 @@ public class Player : LevelSystem
 
         rend.sprite = Sprites.levelSprites[level];
         UpdateDieSprite();
+    }
+
+    public void ResetPlayer()
+    {
+        tr.position = Vector2.zero;
+        level = LEVEL.Level1;
+        LevelSprite();
     }
 }

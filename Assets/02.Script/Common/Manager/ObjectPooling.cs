@@ -65,4 +65,13 @@ public class ObjectPooling : MonoBehaviour
 
     public void ReturnFish(GameObject fish)
         => fish.SetActive(false);
+
+    public void PoolReset()
+    {
+        foreach (GameObject fish in fishList)
+        {
+            if (fish.activeSelf)
+                fish.SetActive(false);
+        }
+    }
 }
