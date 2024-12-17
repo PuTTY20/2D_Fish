@@ -20,4 +20,10 @@ public partial class UIManager : MonoBehaviour
         level.text = "Level " + currentLevel.ToString();
         content.text = $"{questData.content}({questData.curCnt}/{questData.targetCnt})";
     }
+
+    public void ShowDie()
+    {
+        dieTr.gameObject.SetActive(true);
+        replayBtn.gameObject.SetActive(true);
+    }
 }

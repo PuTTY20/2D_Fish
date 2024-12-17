@@ -23,7 +23,10 @@ public class Damage : MonoBehaviour
                 GameManager.instance.life = life;
 
                 if (life == 0)
+                {
                     GameManager.instance.isGameOver = true;
+                    GameManager.UI.ShowDie();
+                }
             }
 
             else if (_enemy.level < player.level)

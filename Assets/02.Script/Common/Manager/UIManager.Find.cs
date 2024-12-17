@@ -4,14 +4,15 @@ using UnityEngine.UI;
 public partial class UIManager : MonoBehaviour
 {
     Player player;
+    
     Transform canvas;
-    Transform Life;
-    Transform quest;
+    Transform lifeTr;
+    Transform questTr;
     Transform dieTr;
     Image[] life = new Image[3];
+    Button replayBtn;
     Text level;
     Text content;
-    Text die;
 
     readonly string _canvas = "Canvas";
 
@@ -20,17 +21,19 @@ public partial class UIManager : MonoBehaviour
         player = GameObject.FindObjectOfType<Player>();
         
         canvas = GameObject.Find(_canvas).transform;
-        Life = canvas.GetChild(0).transform;
+        lifeTr = canvas.GetChild(0).transform;
 
         for (int i = 0; i < 3; i++)
-            life[i] = Life.GetChild(i).GetComponent<Image>();
+            life[i] = lifeTr.GetChild(i).GetComponent<Image>();
 
-        quest = canvas.GetChild(1).transform;
-        level = quest.GetChild(0).GetChild(0).GetComponent<Text>();
-        content = quest.GetChild(2).GetComponent<Text>();
+        questTr = canvas.GetChild(1).transform;
+        level = questTr.GetChild(0).GetChild(0).GetComponent<Text>();
+        content = questTr.GetChild(2).GetComponent<Text>();
 
         dieTr = canvas.GetChild(2).transform;
-        die = dieTr.GetChild(0).GetComponent<Text>();
+        replayBtn = dieTr.GetChild(1).GetComponent<Button>();
+        dieTr.gameObject.SetActive(false);
+        replayBtn.gameObject.SetActive(false);
 
         GetSprite();
     }
